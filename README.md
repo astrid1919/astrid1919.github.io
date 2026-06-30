@@ -2,24 +2,27 @@
 
 This folder is a static host for Android App Links and iOS Universal Links.
 
-Use a custom domain, for example:
+Current domain:
 
 ```text
-https://links.example.com
+https://astrid1919.github.io
 ```
 
-Do not rely on a project path such as `https://user.github.io/repo-name`, because Android and iOS verify files from the domain root:
+This repository must be published as the user/organization Pages site, not a
+project path such as `https://user.github.io/repo-name`, because Android and
+iOS verify files from the domain root:
 
 ```text
-https://links.example.com/.well-known/assetlinks.json
-https://links.example.com/.well-known/apple-app-site-association
+https://astrid1919.github.io/.well-known/assetlinks.json
+https://astrid1919.github.io/.well-known/apple-app-site-association
 ```
 
 ## Files to update
 
-1. Copy `CNAME.example` to `CNAME` and replace `links.example.com` with your real domain.
-2. Replace `REPLACE_WITH_RELEASE_CERT_SHA256` in `.well-known/assetlinks.json`.
-3. Replace `REPLACE_WITH_APP_STORE_ID` in `404.html`, `index.html`, and `invoice/index.html`.
+1. Keep `.nojekyll` committed so GitHub Pages serves `.well-known`.
+2. Keep `.well-known/assetlinks.json` in sync with the Android app package and signing certificate.
+3. Keep `.well-known/apple-app-site-association` in sync with the iOS Team ID and bundle ID.
+4. Keep the App Store and Play Store fallback links in `404.html`, `index.html`, and `invoice/index.html`.
 
 ## Android SHA-256 fingerprint
 
@@ -35,22 +38,20 @@ Copy the `SHA256` value into `.well-known/assetlinks.json`.
 
 Recommended setup:
 
-1. Commit this `invoice_saas_config` folder.
-2. Push it to a dedicated branch or repo used for Pages.
-3. In GitHub, open `Settings > Pages`.
-4. Set the Pages source to this static site.
-5. Configure your DNS to point your custom domain to GitHub Pages.
-6. Enable `Enforce HTTPS`.
+1. Commit this folder to `astrid1919/astrid1919.github.io`.
+2. In GitHub, open `Settings > Pages`.
+3. Set the Pages source to the branch containing this static site.
+4. Enable `Enforce HTTPS`.
 
 ## Test URLs
 
 After publishing, these URLs must load directly:
 
 ```text
-https://YOUR_DOMAIN/.well-known/assetlinks.json
-https://YOUR_DOMAIN/.well-known/apple-app-site-association
-https://YOUR_DOMAIN/invoice/
-https://YOUR_DOMAIN/invoice/123
+https://astrid1919.github.io/.well-known/assetlinks.json
+https://astrid1919.github.io/.well-known/apple-app-site-association
+https://astrid1919.github.io/invoice/
+https://astrid1919.github.io/invoice/123
 ```
 
 `/invoice/123` is handled by `404.html` on GitHub Pages. This is intentional: if the app is installed, the OS opens the app before the browser fallback appears; if the app is not installed, the fallback page redirects to the store.

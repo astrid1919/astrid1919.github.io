@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.vnpt.egov.invoice.sass.project",
+      "sha256_cert_fingerprints": [
+        "FD:7D:27:6C:AD:40:B8:BE:25:6D:F5:39:69:CC:04:20:1E:1B:20:D3:A2:29:99:6B:3D:78:4A:82:8A:F0:E3:22"
+      ]
+    }
+  }
+]

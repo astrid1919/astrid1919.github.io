@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "9AK576J4RE.com.vnpt.invoice.sass",
+        "appIDs": [
+          "9AK576J4RE.com.vnpt.invoice.sass"
+        ],
+        "paths": [
+          "*"
+        ],
+        "components": [
+          {
+            "/": "*"
+          }
+        ]
+      }
+    ]
+  }
+}
